@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fly in Space</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <section class="intro-page">
+            <img src="media/bg1.webp" />
+            <img src="media/bg2.webp" />
+            <img src="media/bg3.webp" />
+            <div class="text">
+                 <p class="main">NSOC WEEK 2</p>
+                <p class="sub"> CSS Animations</p>
+            </div>
+          <!---- <h1 class="intro-title">NSOC WEEK 2</h1>
+            <div class="scroll-indicator">Scroll to Explore</div> -->
+        </section>
+        <section class="intro">
+            <h1>Journey Through The Solar System</h1>
+            <p>From the scorching heat of Mercury to the icy depths of Neptune, each planet holds unique wonders waiting to be discovered. As we traverse the vastness of space, we'll encounter gas giants with swirling storms, rocky worlds with ancient valleys, and moons that might harbor the potential for life.</p>
+            <h3>Scroll Slowly</h3>
+        </section>
+        <section class="planet mercury">
+            <h2>Mercury</h2>
+            <p>The smallest and innermost planet, scorched by the Sun's heat.</p>
+             <img src="media/planet_mercury.svg" class="planetoid">
+        </section>
+        <section class="planet venus">
+            <img src="media/planet_venus.svg" class="planetoid">
+            <h2>Venus</h2>
+            <p>Earth's toxic twin, shrouded in thick clouds of sulfuric acid.</p>
+        </section>
+        <section class="planet earth">
+            <h2>Earth</h2>
+            <p>Our blue marble, teeming with life and diverse ecosystems.</p>
+            <img src="media/planet_earth.svg" class="planetoid">
+        </section>
+        <section class="planet mars">
+            <img src="media/planet_mars.svg" class="planetoid">
+            <h2>Mars</h2>
+            <p>The Red Planet, home to the largest volcano in the solar system.</p>
+        </section>
+        <section class="outro">
+            <p>As we delve deeper into space, we'll explore the asteroid belt, a region teeming with rocky remnants from the early solar system. We'll witness the majesty of Jupiter's Great Red Spot and the ethereal beauty of Saturn's rings. Uranus and Neptune, the ice giants, will reveal their secrets as we push the boundaries of our exploration.</p>
+        </section>
+        <section class="asteroid-belt">
+            <h2>Asteroid Belt</h2>
+            <p>A region teeming with rocky remnants from the early solar system.</p>
+        </section>
+        <section class="planet jupiter">
+            <h2>Jupiter</h2>
+            <p>The largest planet, with its iconic Great Red Spot storm.</p>
+            <img src="media/planet_jupiter.svg" class="planetoid">
+        </section>
+        <section class="planet saturn">
+            <img src="media/planet_saturn.svg" class="planetoid">
+            <h2>Saturn</h2>
+            <p>Known for its beautiful ring system, a celestial wonder.</p>
+        </section>
+        <section class="planet uranus">
+            <h2>Uranus</h2>
+            <p>An ice giant with a tilted axis, causing extreme seasons.</p>
+            <img src="media/planet_uranus.svg" class="planetoid">
+        </section>
+        <section class="planet neptune">
+            <img src="media/planet_neptune.svg" class="planetoid">
+            <h2>Neptune</h2>
+            <p>The windiest planet, with supersonic storms in its atmosphere.</p>
+        </section>
+        <section class ="end">
+            <p>Hope you had fun travelling in space.</p>
+        </section>
+    </div>
+    <div class="astronaut"></div>
+    <div class="stars"></div>
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const stars = document.querySelector('.stars');
+            stars.style.transform = `translateY(${scrolled * 0.1}px)`;
+        });
+
+        const astronaut = document.querySelector('.astronaut');
+        astronaut.style.left = '92%';
+        astronaut.style.bottom = '8%';
+        astronaut.style.transform = 'translate(-50%, -50%)'; 
+        function updateAstronautPosition() {
+             const astronaut = document.querySelector('.astronaut');
+                if (window.innerWidth <= 768) {
+                   astronaut.style.left = '85%';
+                   astronaut.style.bottom = '5%';
+                } else {
+                   astronaut.style.left = '92%';
+                    astronaut.style.bottom = '8%';
+             }
+             astronaut.style.transform = 'translate(-50%, -50%)';
+        }
+
+window.addEventListener('resize', updateAstronautPosition);
+updateAstronautPosition();
+        
+        let bg1 = document.getElementById("bg1");
+        let bg2 = document.getElementById("bg2");
+        let bg3 = document.getElementById("bg3");
+        let text = document.getElementById("text");
+        window.addEventListener('scoll', function(){
+            var value = window.scrollY;
+            bg1.style.top = value * 100 + 'px';
+            bg2.style.top = -value * 10 + 'px';
+            bg3.style.top = value * 50 + 'px';
+            text.style.left = -value* 30 + 'px';
+        })
+    </script>
+</body>
+</html>
